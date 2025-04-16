@@ -2,11 +2,8 @@ portfolio/
 ├── index.html
 ├── css/
 │   ├── style.css
-│   └── animate.min.css
 ├── js/
 │   ├── main.js
-│   ├── scrollreveal.min.js
-│   └── typed.min.js
 ├── images/
 │   ├── profile.jpg
 │   └── projects/
