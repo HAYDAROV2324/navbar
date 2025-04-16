@@ -1,0 +1,391 @@
+/* 
+ * Asosiy CSS fayli - Portfolio sayti uchun stil qoidalari
+ * Barcha stil qoidalar izohlar bilan tushuntirilgan
+ */
+
+/* :root - CSS o'zgaruvchilarini belgilash */
+:root {
+    --primary-color: #3498db; /* Asosiy rang - ko'k */
+    --secondary-color: #2ecc71; /* Ikkinchi darajali rang - yashil */
+    --dark-color: #2c3e50; /* Qora rangning ochroq varianti */
+    --light-color: #ecf0f1; /* Och kulrang fon rangi */
+    --danger-color: #e74c3c; /* Xato ranglari uchun */
+    --success-color: #2ecc71; /* Muvaffaqiyat ranglari uchun */
+    --warning-color: #f39c12; /* Ogohlantirish ranglari uchun */
+    --info-color: #3498db; /* Ma'lumot ranglari uchun */
+    
+    /* Shriftlar */
+    --font-primary: 'Poppins', sans-serif; /* Asosiy shrift */
+    --font-secondary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Zaxira shrift */
+    
+    /* Effektlar */
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Standart soyali effekt */
+    --transition: all 0.3s ease; /* Standart o'tish effekti */
+}
+
+/* Umumiy stil qoidalar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Elementlarning o'lchamini hisoblash usuli */
+    scroll-behavior: smooth; /* Yumshaq skroll */
+}
+
+/* HTML elementiga asosiy stil */
+html {
+    font-size: 62.5%; /* 1rem = 10px qilib belgilash */
+}
+
+/* Tana elementi uchun stil */
+body {
+    font-family: var(--font-primary); /* Asosiy shriftni belgilash */
+    font-size: 1.6rem; /* Asosiy shrift o'lchami (16px) */
+    line-height: 1.6; /* Matnlar orasidagi masofa */
+    color: #333; /* Asosiy matn rangi */
+    background-color: #fff; /* Fon rangi */
+    overflow-x: hidden; /* Gorizontal skrollni o'chirish */
+}
+
+/* Linklar uchun umumiy stil */
+a {
+    text-decoration: none; /* Tagiga chizilgan chiziqni olib tashlash */
+    color: inherit; /* Ota-elementdan rangni meros olish */
+}
+
+/* Ro'yxatlar uchun stil */
+ul {
+    list-style: none; /* Ro'yxat belgilarini olib tashlash */
+}
+
+/* Rasmlar uchun stil */
+img {
+    max-width: 100%; /* Maksimal kenglik */
+    height: auto; /* Balandlikni avtomatik sozlash */
+}
+
+/* Konteyner uchun stil */
+.container {
+    width: 100%;
+    max-width: 1200px; /* Maksimal kenglik */
+    margin: 0 auto; /* Markazga joylashtirish */
+    padding: 0 2rem; /* Ichki chetlar */
+}
+
+/* Tugmalar uchun asosiy stil */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem; /* Ichki chetlar */
+    border-radius: 5px; /* Qirralarni yumaloqlash */
+    font-weight: 500; /* Shrift qalinligi */
+    transition: var(--transition); /* O'tish effekti */
+    border: none; /* Chegarani olib tashlash */
+    cursor: pointer; /* Kursor ko'rinishi */
+    font-size: 1.6rem; /* Shrift o'lchami */
+}
+
+/* Bosh tugma stili */
+.btn-primary {
+    background-color: var(--primary-color); /* Fon rangi */
+    color: #fff; /* Matn rangi */
+}
+
+/* Bosh tugma hover holati */
+.btn-primary:hover {
+    background-color: #2980b9; /* Fon rangini o'zgartirish */
+    transform: translateY(-3px); /* Yuqoriga siljitish */
+    box-shadow: var(--box-shadow); /* Soyali effekt qo'shish */
+}
+
+/* Ikkinchi darajali tugma stili */
+.btn-secondary {
+    background-color: transparent; /* Shaffof fon */
+    color: var(--primary-color); /* Matn rangi */
+    border: 1px solid var(--primary-color); /* Chegara qo'shish */
+}
+
+/* Ikkinchi darajali tugma hover holati */
+.btn-secondary:hover {
+    background-color: var(--primary-color); /* Fon rangi */
+    color: #fff; /* Matn rangi */
+    transform: translateY(-3px); /* Yuqoriga siljitish */
+    box-shadow: var(--box-shadow); /* Soyali effekt qo'shish */
+}
+
+/* Bo'limlar uchun umumiy stil */
+.section {
+    padding: 8rem 0; /* Yuqori va pastki chetlar */
+}
+
+/* Bo'lim sarlavhasi uchun stil */
+.section-title {
+    font-size: 3.5rem; /* Shrift o'lchami */
+    font-weight: 700; /* Shrift qalinligi */
+    margin-bottom: 5rem; /* Pastki chet */
+    text-align: center; /* Markazga tekislash */
+    position: relative; /* Nisbiy pozitsiya */
+}
+
+/* Bo'lim sarlavhasidagi span uchun stil */
+.section-title span {
+    color: var(--primary-color); /* Rangni o'zgartirish */
+}
+
+/* Bo'lim sarlavhasidan keyingi chiziq uchun stil */
+.section-title::after {
+    content: ''; /* Pseudo-element uchun kontent */
+    position: absolute; /* Absolyut pozitsiya */
+    bottom: -1.5rem; /* Pastga siljitish */
+    left: 50%; /* Markazga joylashtirish */
+    transform: translateX(-50%); /* Markazga to'g'ri joylashtirish */
+    width: 80px; /* Kenglik */
+    height: 4px; /* Balandlik */
+    background-color: var(--primary-color); /* Chiziq rangi */
+    border-radius: 2px; /* Qirralarni yumaloqlash */
+}
+
+/* Header uchun stil */
+.header {
+    position: fixed; /* Sahifada qotib qoladigan holat */
+    top: 0; /* Yuqori chetga yopishish */
+    left: 0; /* Chap chetga yopishish */
+    width: 100%; /* To'liq kenglik */
+    z-index: 1000; /* Ustunlik darajasi */
+    background-color: rgba(255, 255, 255, 0.9); /* Shaffof oq fon */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soyali effekt */
+    transition: var(--transition); /* O'tish effekti */
+}
+
+/* Scroll qilinganda header uchun stil */
+.header.scrolled {
+    background-color: rgba(255, 255, 255, 0.98); /* Kamroq shaffof fon */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Kuchliroq soyali effekt */
+    padding: 1rem 0; /* Ichki chetlar */
+}
+
+/* Navbar uchun stil */
+.navbar {
+    display: flex; /* Fleks konteyner */
+    justify-content: space-between; /* Elementlarni tarqatish */
+    align-items: center; /* Markazga tekislash */
+    padding: 2rem 0; /* Ichki chetlar */
+}
+
+/* Logo uchun stil */
+.logo {
+    font-size: 2.5rem; /* Shrift o'lchami */
+    font-weight: 700; /* Shrift qalinligi */
+    color: var(--primary-color); /* Logo rangi */
+}
+
+/* Navigatsiya menyusi uchun stil */
+.nav-menu {
+    display: flex; /* Fleks konteyner */
+    align-items: center; /* Markazga tekislash */
+    gap: 3rem; /* Elementlar orasidagi masofa */
+}
+
+/* Navigatsiya havolalari uchun stil */
+.nav-link {
+    font-size: 1.6rem; /* Shrift o'lchami */
+    font-weight: 500; /* Shrift qalinligi */
+    transition: var(--transition); /* O'tish effekti */
+    position: relative; /* Nisbiy pozitsiya */
+}
+
+/* Navigatsiya havolalaridan keyingi chiziq uchun stil */
+.nav-link::after {
+    content: ''; /* Pseudo-element uchun kontent */
+    position: absolute; /* Absolyut pozitsiya */
+    bottom: -5px; /* Pastga siljitish */
+    left: 0; /* Chap chetga yopishish */
+    width: 0; /* Boshlang'ich kenglik */
+    height: 2px; /* Chiziq balandligi */
+    background-color: var(--primary-color); /* Chiziq rangi */
+    transition: var(--transition); /* O'tish effekti */
+}
+
+/* Navigatsiya havolalari hover holati */
+.nav-link:hover::after {
+    width: 100%; /* Kenglikni to'liq qilish */
+}
+
+/* Mobil menyu uchun hamburger ikonkasi */
+.hamburger {
+    display: none; /* Standart holatda ko'rinmasligi */
+    cursor: pointer; /* Kursor ko'rinishi */
+}
+
+/* Hamburger chiziqlari uchun stil */
+.bar {
+    display: block; /* Blok ko'rinishi */
+    width: 25px; /* Kenglik */
+    height: 3px; /* Balandlik */
+    margin: 5px auto; /* Tashqi chetlar */
+    background-color: var(--dark-color); /* Chiziq rangi */
+    transition: var(--transition); /* O'tish effekti */
+}
+
+/* Hero bo'limi uchun stil */
+.hero {
+    height: 100vh; /* Ekran balandligi */
+    display: flex; /* Fleks konteyner */
+    align-items: center; /* Markazga tekislash */
+    background-color: var(--light-color); /* Fon rangi */
+    padding-top: 8rem; /* Yuqori chet */
+}
+
+/* Hero kontenti uchun stil */
+.hero-content {
+    display: grid; /* CSS Grid tizimi */
+    grid-template-columns: repeat(2, 1fr); /* Ikki ustun */
+    align-items: center; /* Markazga tekislash */
+    gap: 5rem; /* Elementlar orasidagi masofa */
+}
+
+/* Hero matn qismi uchun stil */
+.hero-text {
+    animation: fadeInLeft 1s ease; /* Animatsiya */
+}
+
+/* Pre-title uchun stil (kichik sarlavha) */
+.pre-title {
+    font-size: 1.8rem; /* Shrift o'lchami */
+    color: var(--primary-color); /* Matn rangi */
+    margin-bottom: 1rem; /* Pastki chet */
+    text-transform: uppercase; /* Katta harflarga o'tkazish */
+    letter-spacing: 2px; /* Harflar orasidagi masofa */
+}
+
+/* Asosiy sarlavha uchun stil */
+.title {
+    font-size: 5rem; /* Shrift o'lchami */
+    font-weight: 700; /* Shrift qalinligi */
+    margin-bottom: 1.5rem; /* Pastki chet */
+    line-height: 1.2; /* Qatorlar orasidagi masofa */
+}
+
+/* Kichikroq sarlavha uchun stil */
+.subtitle {
+    font-size: 2.5rem; /* Shrift o'lchami */
+    font-weight: 600; /* Shrift qalinligi */
+    margin-bottom: 2rem; /* Pastki chet */
+    color: #555; /* Matn rangi */
+}
+
+/* Typed.js matni uchun stil */
+.typed-text {
+    color: var(--primary-color); /* Matn rangi */
+}
+
+/* Tavsif uchun stil */
+.description {
+    font-size: 1.6rem; /* Shrift o'lchami */
+    margin-bottom: 3rem; /* Pastki chet */
+    color: #666; /* Matn rangi */
+}
+
+/* CTA tugmalari uchun stil */
+.cta-buttons {
+    display: flex; /* Fleks konteyner */
+    gap: 2rem; /* Tugmalar orasidagi masofa */
+}
+
+/* Hero rasmi uchun stil */
+.hero-image {
+    animation: fadeInRight 1s ease; /* Animatsiya */
+    position: relative; /* Nisbiy pozitsiya */
+}
+
+/* Profil rasmi uchun stil */
+.profile-img {
+    width: 100%; /* Kenglik */
+    max-width: 400px; /* Maksimal kenglik */
+    border-radius: 20px; /* Qirralarni yumaloqlash */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Soyali effekt */
+    z-index: 1; /* Ustunlik darajasi */
+    position: relative; /* Nisbiy pozitsiya */
+}
+
+/* Animatsiyalar */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes animateProgress {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Media so'rovlar - mobil moslashuvchanlik */
+@media (max-width: 768px) {
+    /* Mobil versiya uchun stil qoidalar */
+    .hamburger {
+        display: block; /* Hamburger menyusini ko'rsatish */
+    }
+    
+    .nav-menu {
+        position: fixed; /* Sahifada qotib qoladigan holat */
+        top: 8rem; /* Yuqori chet */
+        left: -100%; /* Ekrandan tashqariga chiqarish */
+        width: 80%; /* Kenglik */
+        height: calc(100vh - 8rem); /* Balandlik */
+        background-color: #fff; /* Fon rangi */
+        flex-direction: column; /* Vertikal joylashtirish */
+        justify-content: center; /* Markazga tekislash */
+        gap: 3rem; /* Elementlar orasidagi masofa */
+        transition: var(--transition); /* O'tish effekti */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soyali effekt */
+    }
+    
+    .nav-menu.active {
+        left: 0; /* Ekranga keltirish */
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr; /* Bir ustunli tuzilish */
+        text-align: center; /* Markazga tekislash */
+    }
+    
+    .cta-buttons {
+        justify-content: center; /* Tugmalarni markazga joylashtirish */
+    }
+    
+    .about-content,
+    .skills-content,
+    .contact-content {
+        grid-template-columns: 1fr; /* Bir ustunli tuzilish */
+    }
+    
+    .about-image,
+    .hero-image {
+        order: -1; /* Birinchi bo'lib ko'rsatish */
+    }
+}
